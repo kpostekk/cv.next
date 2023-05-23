@@ -1,0 +1,13 @@
+body {
+  @apply bg-slate-900;
+}
+
+.paperlike {
+  @apply w-[210mm] h-[297mm] overflow-clip bg-white shadow-lg shadow-sky-100/20 print:shadow-none;
+}
+
+@media print {
+  body {
+    @apply bg-transparent;
+  }
+}
