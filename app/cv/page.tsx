@@ -3,6 +3,7 @@ import { TiSocialGithub, TiSocialLinkedin } from "react-icons/ti"
 import "./cv.css"
 import PrintButton from "./print"
 import React from "react"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
 const lorem = new LoremIpsum()
 
@@ -65,13 +66,13 @@ export default function CvContent() {
               <h2 className="font-semibold text-3xl">Kontakt</h2>
               <ContactCard
                 title="LinkedIn"
-                icon={<TiSocialLinkedin className="inline mr-1" />}
+                icon={<FaLinkedinIn className="inline mr-1" />}
                 content="linkedin.com/in/kpostekk/"
                 url="https://www.linkedin.com/in/kpostekk/"
               />
               <ContactCard
                 title="Github"
-                icon={<TiSocialGithub className="inline mr-1" />}
+                icon={<FaGithub className="inline mr-1" />}
                 content="github.com/kpostekk"
                 url="https://github.com/kpostekk"
               />
