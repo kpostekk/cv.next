@@ -1,6 +1,6 @@
-import Head from "next/head"
 import "./globals.css"
 import { Inter } from "next/font/google"
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="pl">
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
       <body className={inter.className}>{children}</body>
+      <Analytics />
     </html>
   )
 }
