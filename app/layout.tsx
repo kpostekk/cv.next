@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "cv.next",
-  description: "CV of Krystian Postek",
+  description: "Personal site with CV",
   viewport: "width=device-width, initial-scale=1",
 }
 

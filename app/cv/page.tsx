@@ -49,6 +49,15 @@ function SkillTag(props: SkillTagProps) {
   )
 }
 
+function Separator() {
+  return <hr className="border-black mt-[2px]" />
+}
+
+export const metadata = {
+  title: "CV",
+  description: "Curriculum vitae",
+}
+
 export default function CvContent() {
   return (
     <div className="grid gap-6 mx-auto w-fit max-w-screen my-4 print:m-0">
@@ -100,7 +109,7 @@ export default function CvContent() {
                 <SkillTag name="Postgres" />
                 <SkillTag name="MongoDB" />
                 <SkillTag name="Python" />
-                <SkillTag name="C#" />
+                <SkillTag name="C# .Net" />
                 <SkillTag name="Java" />
                 <SkillTag name="Linux" />
                 <SkillTag name="Angielski (C1)" />
@@ -117,9 +126,13 @@ export default function CvContent() {
             </div>
           </div>
           <div>
-            <h2 className="font-semibold text-4xl mb-4">O mnie</h2>
+            <h2 className="font-semibold text-4xl mb-4">
+              O mnie <Separator />
+            </h2>
             <p>{lorem.generateWords(70)}</p>
-            <h2 className="font-semibold text-4xl my-4">Doświadczenie</h2>
+            <h2 className="font-semibold text-4xl my-4">
+              Doświadczenie <Separator />
+            </h2>
             {Array.from({ length: 5 }).map((_, i) => (
               <p key={i} className="my-4">
                 {lorem.generateWords(40)}
@@ -132,13 +145,17 @@ export default function CvContent() {
         <div className="grid grid-cols-[1fr_2fr] p-4 gap-4">
           <div></div>
           <div>
-            <h2 className="font-semibold text-3xl">Certyfikaty</h2>
+            <h2 className="font-semibold text-3xl">
+              Certyfikaty <Separator />
+            </h2>
             {Array.from({ length: 3 }).map((_, i) => (
               <p key={i} className="my-4">
                 {lorem.generateWords(24)}
               </p>
             ))}
-            <h2 className="font-semibold text-3xl">Wykształcenie</h2>
+            <h2 className="font-semibold text-3xl">
+              Wykształcenie <Separator />
+            </h2>
             {Array.from({ length: 3 }).map((_, i) => (
               <p key={i} className="my-4">
                 {lorem.generateWords(24)}
