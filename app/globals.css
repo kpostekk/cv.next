@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* body {
+  background: rgb(17, 16, 29);
+  background: linear-gradient(
+    35deg,
+    rgba(17, 16, 29, 1) 0%,
+    rgba(101, 27, 68, 1) 100%
+  );
+} */
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +33,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
