@@ -4,6 +4,7 @@ import "./cv.css"
 import PrintButton from "./print"
 import React from "react"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
+import Image from "next/image"
 
 const lorem = new LoremIpsum()
 
@@ -51,6 +52,41 @@ function SkillTag(props: SkillTagProps) {
 
 function Separator() {
   return <hr className="border-black mt-[2px]" />
+}
+
+type CvWorkExperienceProps = {
+  dateRange: string
+  company: React.ReactNode
+  children: React.ReactNode
+}
+
+function CvWorkExperience(props: CvWorkExperienceProps) {
+  return (
+    <div className="my-4">
+      <div className="font-semibold flex gap-4 items-center">
+        <h3 className="text-2xl">{props.dateRange}</h3>
+        <div className="border-l border-black h-8" />
+        <span className="text-lg">{props.company}</span>
+      </div>
+      <div className="my-2">{props.children}</div>
+    </div>
+  )
+}
+
+type CvWorkTechnologiesProps = {
+  technologies: string[]
+}
+
+function CvWorkTechnologies(props: CvWorkTechnologiesProps) {
+  return (
+    <>
+      {props.technologies.map((text, i) => (
+        <div className="p-1 border border-black text-xs" key={i}>
+          {text}
+        </div>
+      ))}
+    </>
+  )
 }
 
 export const metadata = {
@@ -119,48 +155,92 @@ export default function CvContent() {
             <div className="grid gap-1 border-y border-black py-2">
               <h2 className="font-semibold text-3xl">Zgody</h2>
               <p className="italic p-1 text-xs">
-                {
-                  "Wyrażam zgodę na przetwarzanie moich danych osobowych przez (nazwa firmy) w celu prowadzenia rekrutacji na aplikowane przeze mnie stanowisko."
-                }
+                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
+                prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.
               </p>
             </div>
           </div>
           <div>
-            <h2 className="font-semibold text-4xl mb-4">
+            <h2 className="font-semibold text-4xl">
               O mnie <Separator />
             </h2>
-            <p>{lorem.generateWords(70)}</p>
-            <h2 className="font-semibold text-4xl my-4">
+            <p className="my-2">
+              Jestem full-stack deweloperem z 4 letnim doświadczeniem w
+              tworzeniu aplikacji webowych. Studiuję Informatykę na
+              Polsko-Japońskiej Akademii Technik Komputerowych. Interesuję się
+              bezpieczeństwem informatycznym i rozwijam to zainteresowanie jako
+              członek ISSA Polska. Aktywnie śledzę rozwój technologii webowych.
+              W swoich projektach szczególną uwagę przywiązuję do spójności kodu
+              i najlepszych praktyk w zakresie wydajności i designu.
+            </p>
+            <h2 className="font-semibold text-4xl">
               Doświadczenie <Separator />
             </h2>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <p key={i} className="my-4">
-                {lorem.generateWords(40)}
-              </p>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="paperlike">
-        <div className="grid grid-cols-[1fr_2fr] p-4 gap-4">
-          <div></div>
-          <div>
-            <h2 className="font-semibold text-3xl">
-              Certyfikaty <Separator />
-            </h2>
-            {Array.from({ length: 3 }).map((_, i) => (
-              <p key={i} className="my-4">
-                {lorem.generateWords(24)}
-              </p>
-            ))}
+            <CvWorkExperience
+              dateRange="2022 - obecnie"
+              company={
+                <Image
+                  width={110}
+                  height={-1}
+                  src="/ledatel.png"
+                  alt="Logo LEDATEL"
+                />
+              }
+            >
+              <>
+                <h4 className="text-xl font-semibold my-2">Project Leader</h4>
+                <p>
+                  Dobór technologii, code review, zarządzanie małym zespołem,
+                  współpraca z innymi projektami, komunikacja z działem
+                  marketingu oraz sprzedaży.
+                </p>
+                <h4 className="text-xl font-semibold my-2">Full-stack</h4>
+                <p>
+                  Zaprojektowanie i wykonanie systemu emisji reklam, tworzenie
+                  testów oraz dokumentacji.
+                </p>
+                <div className="flex flex-wrap gap-1 my-2">
+                  <CvWorkTechnologies
+                    technologies={"React, TypeScript, Vite, Electron, NestJS, GraphQL, Prisma, Postgres, Storybook, Jest, Docker".split(
+                      ", "
+                    )}
+                  />
+                </div>
+              </>
+            </CvWorkExperience>
+            <CvWorkExperience
+              company="Freelancer"
+              dateRange="2019 - 2021"
+            >
+              Tworzenie scraperów, panelów administracyjnych oraz
+              statystycznych.
+              <div className="flex flex-wrap gap-1 my-2">
+                  <CvWorkTechnologies
+                    technologies={"TypeScript, Node, Python, Django, MongoDB".split(
+                      ", "
+                    )}
+                  />
+                </div>
+            </CvWorkExperience>
+            {/* <h4>Full-stack</h4>
+            <p className="my-2">
+              Zaprojektowanie i wykonanie systemu emisji reklam, tworzenie
+              testów oraz dokumentacji. React, TypeScript, Vite, Electron,
+              NestJS, GraphQL, Prisma, Postgres, Storybook, Jest, Docker.
+            </p> */}
+            {/* <h3>{"2021 | Freelancer"}</h3>
+            <p className="my-2">
+              Tworzenie scraperów, panelów administracyjnych oraz
+              statystycznych. TypeScript, Node, Python, Django, MongoDB.
+            </p> */}
             <h2 className="font-semibold text-3xl">
               Wykształcenie <Separator />
             </h2>
-            {Array.from({ length: 3 }).map((_, i) => (
-              <p key={i} className="my-4">
-                {lorem.generateWords(24)}
-              </p>
-            ))}
+            <div>
+              <h4 className="font-semibold text-xl my-2">Polsko-Japońska Akademia Technik Komputerowych w Warszawie</h4>
+              <p className="text-lg">Inżynier (Inż.), Informatyka</p>
+              <p>2021 - 2025</p>
+            </div>
           </div>
         </div>
       </div>
