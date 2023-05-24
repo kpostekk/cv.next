@@ -139,6 +139,8 @@ export default function CvContent() {
                 <SkillTag name="NestJS" />
                 <SkillTag name="Prisma" />
                 <SkillTag name="Jest" />
+                <SkillTag name="Figma" />
+                <SkillTag name="Storybook" />
                 <SkillTag name="REST" />
                 <SkillTag name="Git" />
                 <SkillTag name="Docker" />
