@@ -26,15 +26,15 @@ export default function Home() {
             {/* contact buttons */}
             <ContactButton
               icon={<FaGithub className="mx-auto" />}
-              url="#"
+              url="https://github.com/kpostekk"
             />
             <ContactButton
               icon={<FaLinkedinIn className="mx-auto" />}
-              url="#"
+              url="https://www.linkedin.com/in/kpostekk/"
             />
             <ContactButton
               icon={<FaStackOverflow className="mx-auto" />}
-              url="#"
+              url="https://stackoverflow.com/users/9256726/kpostekk"
             />
           </div>
           <div className="bg-white p-8 w-full h-full rounded-xl">
