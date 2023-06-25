@@ -108,7 +108,7 @@ export default function CvContent() {
           </div>
           <div className="grid gap-4 place-content-start">
             <div className="grid gap-1 border-y border-black py-2">
-              <h2 className="font-semibold text-3xl">Kontakt</h2>
+              <h2 className="font-semibold text-3xl">Contact</h2>
               <ContactCard
                 title="LinkedIn"
                 icon={<FaLinkedinIn className="inline mr-1" />}
@@ -126,15 +126,20 @@ export default function CvContent() {
                 content="krystian@postek.eu"
                 url="mailto:krystian@postek.eu"
               />
+              <ContactCard
+                title="Phone"
+                content="+48 795 037 636"
+                url="tel:+48795037636"
+              />
             </div>
             <div className="grid gap-1 border-y border-black py-2">
-              <h2 className="font-semibold text-3xl">Umiejętności</h2>
+              <h2 className="font-semibold text-3xl">Skills</h2>
               <div className="flex flex-wrap gap-1">
                 <SkillTag name="TypeScript" important />
                 <SkillTag name="React" important />
                 <SkillTag name="Next.js" important />
                 <SkillTag name="GraphQL" important />
-                <SkillTag name="TailwindCSS" />
+                <SkillTag name="TailwindCSS" important />
                 <SkillTag name="Vite" />
                 <SkillTag name="NestJS" />
                 <SkillTag name="Prisma" />
@@ -150,23 +155,23 @@ export default function CvContent() {
                 <SkillTag name="C# .Net" />
                 <SkillTag name="Java" />
                 <SkillTag name="Linux" />
-                <SkillTag name="Angielski (C1)" />
-                <SkillTag name="Polski (native)" />
+                <SkillTag name="English (C1)" />
+                <SkillTag name="Polish (native)" />
               </div>
             </div>
-            <div className="grid gap-1 border-y border-black py-2">
+            {/* <div className="grid gap-1 border-y border-black py-2">
               <h2 className="font-semibold text-3xl">Zgody</h2>
               <p className="italic p-1 text-xs">
                 Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
                 prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.
               </p>
-            </div>
+            </div> */}
           </div>
           <div>
             <h2 className="font-semibold text-4xl">
-              O mnie <Separator />
+              About me <Separator />
             </h2>
-            <p className="my-2">
+            {/* <p className="my-2">
               Jestem full-stack deweloperem z 4 letnim doświadczeniem w
               tworzeniu aplikacji webowych. Studiuję Informatykę na
               Polsko-Japońskiej Akademii Technik Komputerowych. Interesuję się
@@ -174,12 +179,18 @@ export default function CvContent() {
               członek ISSA Polska. Aktywnie śledzę rozwój technologii webowych.
               W swoich projektach szczególną uwagę przywiązuję do spójności kodu
               i najlepszych praktyk w zakresie wydajności i designu.
+            </p> */}
+            <p className="my-2">
+            I am a full-stack developer with 4 years of experience in creating web applications and services.
+            I am currently studying IT at the Polish-Japanese Academy of Information Technology.
+            Additionally, I have a keen interest in IT security, which I am actively developing as a member of ISSA Poland.
+            I actively follow the rapid development of web technologies and prioritize code consistency, performance, and design best practices in my projects.
             </p>
             <h2 className="font-semibold text-4xl">
-              Doświadczenie <Separator />
+              Experience <Separator />
             </h2>
             <CvWorkExperience
-              dateRange="2022 - obecnie"
+              dateRange="2022 - now"
               company={
                 <Image
                   width={110}
@@ -192,14 +203,11 @@ export default function CvContent() {
               <>
                 <h4 className="text-xl font-semibold my-2">Project Leader</h4>
                 <p>
-                  Dobór technologii, code review, zarządzanie małym zespołem,
-                  współpraca z innymi projektami, komunikacja z działem
-                  marketingu oraz sprzedaży.
+                  Technology selection, code review, small team management, collaboration with other projects, communication with the marketing and sales departments.
                 </p>
                 <h4 className="text-xl font-semibold my-2">Full-stack</h4>
                 <p>
-                  Zaprojektowanie i wykonanie systemu emisji reklam, tworzenie
-                  testów oraz dokumentacji.
+                Designing and implementing an advertising distribution and projection system, modernizing current infrastructure, creating tests, and documentation.
                 </p>
                 <div className="flex flex-wrap gap-1 my-2">
                   <CvWorkTechnologies
@@ -214,8 +222,7 @@ export default function CvContent() {
               company="Freelancer"
               dateRange="2019 - 2021"
             >
-              Tworzenie scraperów, panelów administracyjnych oraz
-              statystycznych.
+              Creating scrapers, administrative panels, and statistical dashboards.
               <div className="flex flex-wrap gap-1 my-2">
                   <CvWorkTechnologies
                     technologies={"TypeScript, Node, Python, Django, MongoDB".split(
@@ -236,11 +243,11 @@ export default function CvContent() {
               statystycznych. TypeScript, Node, Python, Django, MongoDB.
             </p> */}
             <h2 className="font-semibold text-3xl">
-              Wykształcenie <Separator />
+              Education <Separator />
             </h2>
             <div>
-              <h4 className="font-semibold text-xl my-2">Polsko-Japońska Akademia Technik Komputerowych w Warszawie</h4>
-              <p className="text-lg">Inżynier (Inż.), Informatyka</p>
+              <h4 className="font-semibold text-xl my-2">Polish-Japanese Academy of Information Technology</h4>
+              <p className="text-lg">Bachelor of Engineering (BEng.), IT</p>
               <p>2021 - 2025</p>
             </div>
           </div>
